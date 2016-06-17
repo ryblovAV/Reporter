@@ -3,6 +3,8 @@ package engine.metainfo
 import play.api.libs.functional.syntax._
 import play.api.libs.json._
 
+import play.Logger._
+
 case class MetaInfoJsonReport(title: String, sql: Seq[String])
 
 object MetaInfoJsonParser {
@@ -14,6 +16,7 @@ object MetaInfoJsonParser {
 
   def parse(str: String): MetaInfoJsonReport = {
     val conf = Json.parse(str)
+    info(s"conf = $conf")
     (conf).as[MetaInfoJsonReport]
   }
 
