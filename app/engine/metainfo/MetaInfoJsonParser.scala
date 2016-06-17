@@ -16,7 +16,7 @@ object MetaInfoJsonParser {
 
   def parse(str: String): MetaInfoJsonReport = {
     val conf = Json.parse(str)
-    info(s"conf = $conf")
+    debug(s"conf = $conf")
     (conf).as[MetaInfoJsonReport]
   }
 
