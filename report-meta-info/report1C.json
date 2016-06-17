@@ -29,7 +29,7 @@
     "       t.kwt as ccb_kwt,",
     "       c1.kwh as lesk_kwt,",
     "       nvl(t.kwt,0) - nvl(c1.kwh,0) as d_kwt",
-    "  from leskdata2.cm_from_1c_april c1,",
+    "  from leskdata2.cm_from_1c_may c1,",
     "       (select t.id_kl,",
     "               a.acct_id,",
     "               t.per_id,",
