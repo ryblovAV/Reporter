@@ -1,0 +1,8 @@
+{
+  "title": "Незавершенные счета",
+  "sql": ["select *",
+          "  from rusadm.ci_bill b, rusadm.ci_acct a",
+          " where b.complete_dttm is null",
+          "   and b.acct_id=a.acct_id",
+          "   and a.cust_cl_cd='QL'"]
+}

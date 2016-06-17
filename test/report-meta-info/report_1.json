@@ -1,0 +1,7 @@
+{
+  "title": "dummyReport",
+  "sql": [
+    "select *",
+    "from dual"
+  ]
+}

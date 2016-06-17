@@ -1,0 +1,29 @@
+{
+  "title": "Ощибки биллинга",
+  "sql": [
+    "select c.acct_id,",
+    "       c.sa_type_cd,",
+    "       to_char(e.cre_dttm,'DD.MM.YYYY HH24:MI:SS') as cre_dttm,",
+    "       e.bseg_id,",
+    "       e.message_cat_nbr,",
+    "       e.message_nbr,",
+    "       e.exp_msg,",
+    "       b.bill_id as bseg_bill_id,",
+    "       bb.bill_id",
+    "  from rusadm.ci_bseg_excp e,",
+    "       rusadm.ci_bill      bb,",
+    "       rusadm.ci_bseg      b,",
+    "       rusadm.ci_sa        c,",
+    "       rusadm.ci_acct      ac,",
+    "       rusadm.ci_per       p,",
+    "       rusadm.ci_acct_per  ap,",
+    "       leskdata2.v_kl_acct j",
+    " where ac.acct_id = c.acct_id",
+    "   and b.bseg_id = e.bseg_id",
+    "   and c.sa_id = b.sa_id",
+    "   and ap.per_id = p.per_id",
+    "   and ap.acct_id = ac.acct_id",
+    "   and j.per_id = ap.per_id",
+    "   and bb.bill_id(+) = b.bill_id"
+  ]
+}

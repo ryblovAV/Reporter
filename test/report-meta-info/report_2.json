@@ -1,0 +1,7 @@
+{
+  "title": "dummyCountReport",
+  "sql": [
+    "select cunt(*) as cnt",
+    "from dual"
+  ]
+}

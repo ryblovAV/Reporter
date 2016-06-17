@@ -1,0 +1,12 @@
+@(reports:Seq[MetaInfoReport])
+@main("list report") {
+    @reports.map{r =>
+        <div>
+            <ul>
+                <li>
+                    <a href='@routes.DBToExcellController.export(r.id)'>@r.title</a>
+                </li>
+            </ul>
+        </div>
+    }
+}
